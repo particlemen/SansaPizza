@@ -11,7 +11,7 @@ package sansapizza;
  */
 public class Mesero implements Empleado {
     
-    private int sueldo = 200000;
+    private int sueldo = 9000;
     private int maxAtendidos = 15;
     
     public void pagarSueldo(Dia dia){
