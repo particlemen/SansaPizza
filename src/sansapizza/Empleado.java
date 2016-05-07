@@ -11,5 +11,5 @@ package sansapizza;
  */
 interface Empleado {
     public void pagarSueldo();
-    public void realizarEmpleo();
+    public void realizarEmpleo(Dia dia);
 }
