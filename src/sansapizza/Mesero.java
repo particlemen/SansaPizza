@@ -14,8 +14,8 @@ public class Mesero implements Empleado {
     private int sueldo = 200000;
     private int maxAtendidos = 15;
     
-    public void pagarSueldo(){
-        int p;
+    public void pagarSueldo(Dia dia){
+        
     }
     public void realizarEmpleo(Dia dia){
         
