@@ -12,6 +12,6 @@ package sansapizza;
 public abstract class Decoracion {
     int precio;
     double popularidad;
-    int tipo;
+    
     
 }
