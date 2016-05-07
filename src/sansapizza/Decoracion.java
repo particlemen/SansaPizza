@@ -10,7 +10,8 @@ package sansapizza;
  * @author maligno
  */
 public abstract class Decoracion {
-    private int precio;
-    private int popularidad;
-        
+    int precio;
+    double popularidad;
+    int tipo;
+    
 }
