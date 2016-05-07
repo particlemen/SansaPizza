@@ -10,12 +10,10 @@ package sansapizza;
  * @author maligno
  */
 public class DecoracionRegular extends Decoracion{
-    private int precio;
-    private double popularidad;
+
     public DecoracionRegular() {
-        precio = 444;
+        precio = 5000;
         popularidad = 0.25;
-        
-        void 
+        tipo = 1;
     }
 }
