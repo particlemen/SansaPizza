@@ -12,10 +12,10 @@ import java.util.ArrayList;
 public class Local {
     private int DineroLocal;
     private int Estrellas;
-    protected ArrayList<Empleado> Empleados = new ArrayList();
-    protected ArrayList<Mesa> Mesas = new ArrayList(9);
-    protected ArrayList<Dia> Dias = new ArrayList();
-    protected ArrayList<Decoracion> Decoraciones = new ArrayList();
+    private ArrayList<Empleado> Empleados = new ArrayList();
+    private ArrayList<Mesa> Mesas = new ArrayList(9);
+    private ArrayList<Dia> Dias = new ArrayList();
+    private ArrayList<Decoracion> Decoraciones = new ArrayList();
     
     public Local(){
         DineroLocal = 1200000;
@@ -30,10 +30,12 @@ public class Local {
     public void Popularidad(){
         double popularidad = 0;
         for (int puntero = 0; puntero < this.Decoraciones.size(); puntero++){
-            popularidad += this.Decoraciones.get(puntero).popularidad;
+            popularidad += this.Decoraciones.get(puntero).getPopularidad();
         }
         if ((0 <= popularidad) && (popularidad < 2)) this.Estrellas = 1;
         else if ((2 <= popularidad) && (popularidad < 4)) this.Estrellas = 2;
-        
-      }   
+        else if ((4 <= popularidad) && (popularidad < 8)) this.Estrellas = 3;
+        else if ((8 <= popularidad) && (popularidad < 16)) this.Estrellas = 4;
+        else this.Estrellas = 5;
+    }   
 }

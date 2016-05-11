@@ -10,9 +10,9 @@ package sansapizza;
  * @author maligno
  */
 public abstract class Decoracion {
-    private int precio;
-    private double popularidad;
-    private int venta;
+    protected int precio;
+    protected double popularidad;
+    protected int venta;
     
     public double getPopularidad(){
         return this.popularidad;
