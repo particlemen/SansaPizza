@@ -33,63 +33,63 @@ public class Dia {
    }
      
    public void setCp(int n){
-       Cp = n;
+       this.Cp = n;
    }
    
    public void setCs(int n){
-       Cs = n;
+       this.Cs = n;
    }
    public void setCa(int n){
-       Ca = n;
+       this.Ca = n;
    }
    public void setCr(int n){
-       Cr = n;
+       this.Cr = n;
    } 
    public void setCf(int n){
-       Cf = n;
+       this.Cf = n;
    }
    public void setSueldo(int n){
-       sueldo = n;
+       this.sueldo = n;
    }
    public void setIngreso(int n){
-       ingreso = n;
+       this.ingreso = n;
    } 
    public void setCosto(int n){
-       costo = n;
+       this.costo = n;
    }
    public void setResultado(int n){
-       resultado = n;
+       this.resultado = n;
    } 
    public int getCp(){
-       return Cp;
+       return this.Cp;
    }
    
    public int getCs(){
-       return Cs;
+       return this.Cs;
    }
    
    public int getCa(){
-       return Ca;
+       return this.Ca;
    }
    
    public int getCr(){
-       return Cr;
+       return this.Cr;
    }
    public int getCf(){
-       return Cf;
+       return this.Cf;
    }
    public int getSueldo(){
-       return Cp;
+       return this.Cp;
    }
    public int getIngreso(){
-       return ingreso;
+       return this.ingreso;
    }
    public int getCosto(){
-       return costo;
+       return this.costo;
    }
    
    public int getResultado(){
-       return resultado;
+       return this.resultado;
    }
    
    
