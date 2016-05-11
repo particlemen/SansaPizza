@@ -10,15 +10,15 @@ package sansapizza;
  * @author maligno
  */
 public class Dia {
-   protected int Cp;
-   protected int Cs;
-   protected int Ca;
-   protected int Cr;
-   protected int Cf;
-   protected int sueldo;
-   protected int ingreso;
-   protected int costo;
-   protected int resultado;
+   private int Cp;
+   private int Cs;
+   private int Ca;
+   private int Cr;
+   private int Cf;
+   private int sueldo;
+   private int ingreso;
+   private int costo;
+   private int resultado;
     
    public Dia(){
        Cp = 0;
@@ -31,5 +31,66 @@ public class Dia {
        costo = 0;
        resultado = 0;
    }
-            
+     
+   public void setCp(int n){
+       Cp = n;
+   }
+   
+   public void setCs(int n){
+       Cs = n;
+   }
+   public void setCa(int n){
+       Ca = n;
+   }
+   public void setCr(int n){
+       Cr = n;
+   } 
+   public void setCf(int n){
+       Cf = n;
+   }
+   public void setSueldo(int n){
+       sueldo = n;
+   }
+   public void setIngreso(int n){
+       ingreso = n;
+   } 
+   public void setCosto(int n){
+       costo = n;
+   }
+   public void setResultado(int n){
+       resultado = n;
+   } 
+   public int getCp(){
+       return Cp;
+   }
+   
+   public int getCs(){
+       return Cs;
+   }
+   
+   public int getCa(){
+       return Ca;
+   }
+   
+   public int getCr(){
+       return Cr;
+   }
+   public int getCf(){
+       return Cf;
+   }
+   public int getSueldo(){
+       return Cp;
+   }
+   public int getIngreso(){
+       return ingreso;
+   }
+   public int getCosto(){
+       return costo;
+   }
+   
+   public int getResultado(){
+       return resultado;
+   }
+   
+   
 }
