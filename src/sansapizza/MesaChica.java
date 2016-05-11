@@ -13,6 +13,7 @@ public class MesaChica extends Mesa {
     public MesaChica(){
         precio = 1000;
         cap = 5;
+        venta = 400;
     } 
     
 }

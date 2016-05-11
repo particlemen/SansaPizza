@@ -13,6 +13,6 @@ public class DecoracionBonita extends Decoracion {
    public DecoracionBonita() {
         precio = 10000;
         popularidad = 0.5;
-       
+        venta = 6000;
     }
 }

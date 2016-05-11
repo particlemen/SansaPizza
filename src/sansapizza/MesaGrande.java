@@ -13,6 +13,7 @@ public class MesaGrande extends Mesa {
     public MesaGrande(){
         precio = 3000;
         cap = 15;
+        venta = 1200;
     } 
     
 }

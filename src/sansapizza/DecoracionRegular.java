@@ -14,6 +14,6 @@ public class DecoracionRegular extends Decoracion{
     public DecoracionRegular() {
         precio = 5000;
         popularidad = 0.25;
-      
+        venta = 2500;
     }
 }
