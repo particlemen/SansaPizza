@@ -18,10 +18,10 @@ public class Cocinero implements Empleado {
         maxAtendidos = 8;
     }
     public void pagarSueldo(Dia dia){
-        dia.sueldo = dia.sueldo + sueldo;
+        dia.setSueldo(dia.getSueldo() + sueldo);
     }
     public void realizarEmpleo(Dia dia){
-        dia.Cr+= 80;
+        dia.setCr(dia.getCr() + sueldo);
         
     }
     
