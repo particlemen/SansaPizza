@@ -14,6 +14,7 @@ public class Local {
     private double Popularidad;
     private int DineroLocal;
     private int Estrellas;
+    private Comida Comida;
     private ArrayList<Empleado> Empleados = new ArrayList();
     private ArrayList<Mesa> Mesas = new ArrayList(9);
     private ArrayList<Dia> Dias = new ArrayList();
@@ -110,12 +111,19 @@ public class Local {
         switch (tipo){
             case 1:
                 while (puntero < this.Empleados.size()){
-                    if (this.Empleados.get(puntero).getSueldo() == 8000) this.Empleados.remove(puntero);
+                    if (this.Empleados.get(puntero).getSueldo() == 8000){
+                        this.Empleados.remove(puntero);
+                        return;
+                    }
+                    puntero++;
                 }
-                break;
             case 2:
                 while (puntero < this.Empleados.size()){
-                    if (this.Empleados.get(puntero).getSueldo() == 10000) this.Empleados.remove(puntero);
+                    if (this.Empleados.get(puntero).getSueldo() == 10000) {
+                        this.Empleados.remove(puntero);
+                        return;
+                    }
+                    puntero++;
                 }
                 break;
         }   
@@ -123,19 +131,53 @@ public class Local {
     
     public void venderMesas(int tipo){
         int puntero = 0;
-        while (puntero < this.Empleados.size()){
+        while (puntero < this.Mesas.size()){
             if ((tipo == 1) && (this.Mesas.get(puntero).getVenta() == 50000)){
                 this.Ganancia(50000);
                 this.Mesas.remove(puntero);
+                return;
             }
             else if ((tipo == 2) && (this.Mesas.get(puntero).getVenta() == 75000)){
                 this.Ganancia(75000);
                 this.Mesas.remove(puntero);
+                return;
             }
             else if ((tipo == 3) && (this.Mesas.get(puntero).getVenta() == 100000)){
                 this.Ganancia(100000);
                 this.Mesas.remove(puntero);
+                return;
             }
+            puntero++;
         }
+    }
+    
+    public void venderDecoracion(int tipo){
+        int puntero = 0;
+        while (puntero < this.Decoraciones.size()){
+            if ((tipo == 1) && (this.Decoraciones.get(puntero).getVenta() == 50000)){
+                this.Ganancia(6500);
+                this.Decoraciones.remove(puntero);
+                return;
+            }
+            else if ((tipo == 2) && (this.Decoraciones.get(puntero).getVenta() == 75000)){
+                this.Ganancia(16000);
+                this.Decoraciones.remove(puntero);
+                return;
+            }
+            else if ((tipo == 3) && (this.Decoraciones.get(puntero).getVenta() == 100000)){
+                this.Ganancia(30000);
+                this.Decoraciones.remove(puntero);
+                return;
+            }
+            puntero++;
+        }
+    }
+    
+    public void subirEstrellas(){
+        this.Estrellas++;
+    }
+    
+    public void subirComida(){
+        Comida.aumentarNivel(this);
     }
 }
