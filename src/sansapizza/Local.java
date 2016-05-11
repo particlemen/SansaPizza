@@ -5,11 +5,13 @@
  */
 package sansapizza;
 import java.util.ArrayList;
+import java.lang.Math;
 /**
  *
  * @author maligno
  */
 public class Local {
+    private double Popularidad;
     private int DineroLocal;
     private int Estrellas;
     private ArrayList<Empleado> Empleados = new ArrayList();
@@ -21,21 +23,23 @@ public class Local {
         DineroLocal = 1200000;
         Estrellas = 0;
     }
-    public void setGanancias(int ganancias){
+    public void Ganancias(int ganancias){
         this.DineroLocal += ganancias;
     }
-    public void setPerdidas(int perdidas){
+    public void Perdidas(int perdidas){
         this.DineroLocal -= perdidas;
     }
-    public void Popularidad(){
-        double popularidad = 0;
+    public void PopularidadDecoracion(){
+        double popularidad = Math.pow(2 , this.Estrellas);
         for (int puntero = 0; puntero < this.Decoraciones.size(); puntero++){
             popularidad += this.Decoraciones.get(puntero).getPopularidad();
         }
-        if ((0 <= popularidad) && (popularidad < 2)) this.Estrellas = 1;
-        else if ((2 <= popularidad) && (popularidad < 4)) this.Estrellas = 2;
-        else if ((4 <= popularidad) && (popularidad < 8)) this.Estrellas = 3;
-        else if ((8 <= popularidad) && (popularidad < 16)) this.Estrellas = 4;
-        else this.Estrellas = 5;
-    }   
+        this.Popularidad = popularidad;
+    }
+    public void anadirMesero(){
+        this.Empleados.add(new Mesero());
+    }
+    public  anadirDecoracion(){
+        
+    }
 }
