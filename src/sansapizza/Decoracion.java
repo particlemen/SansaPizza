@@ -10,8 +10,19 @@ package sansapizza;
  * @author maligno
  */
 public abstract class Decoracion {
-    int precio;
-    double popularidad;
-    int venta;
+    private int precio;
+    private double popularidad;
+    private int venta;
     
+    public double getPopularidad(){
+        return this.popularidad;
+    }
+    
+    public int getVenta(){
+        return this.venta;
+    }
+    
+    public int getPrecio(){
+        return this.precio;
+    }
 }
