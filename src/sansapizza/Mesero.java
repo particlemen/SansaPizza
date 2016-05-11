@@ -19,10 +19,10 @@ public class Mesero implements Empleado {
         maxAtendidos = 15;
     }
     public void pagarSueldo(Dia dia){
-        dia.sueldo = dia.sueldo + sueldo;
-
+        dia.setSueldo(dia.getSueldo() + sueldo);
+        
     }
     public void realizarEmpleo(Dia dia){
-        dia.Ca+=150;
+        dia.setCr(dia.getCr() + sueldo);
     }
 }
