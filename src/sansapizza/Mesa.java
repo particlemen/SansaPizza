@@ -12,6 +12,7 @@ package sansapizza;
 public abstract class Mesa {
     int precio;
     int cap;
+    int venta;
     
     public void Contabilizar(Dia dia){
         dia.Cs += this.cap;

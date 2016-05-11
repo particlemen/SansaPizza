@@ -16,4 +16,11 @@ public class Local {
     ArrayList Muebles = new ArrayList();
     ArrayList Dias = new ArrayList();
     ArrayList Decoracion = new ArrayList();
+    
+    public void Ganancias(int ganancias){
+        this.DineroLocal += ganancias;
+    }
+    public void Perdidas(int perdidas){
+        this.DineroLocal -= perdidas;
+    }
 }
