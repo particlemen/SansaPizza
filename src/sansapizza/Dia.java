@@ -10,15 +10,15 @@ package sansapizza;
  * @author maligno
  */
 public class Dia {
-   private int Cp;
-   private int Cs;
-   private int Ca;
-   private int Cr;
-   private int Cf;
-   private int sueldo;
-   private int ingreso;
-   private int costo;
-   private int resultado;
+   protected int Cp;
+   protected int Cs;
+   protected int Ca;
+   protected int Cr;
+   protected int Cf;
+   protected int sueldo;
+   protected int ingreso;
+   protected int costo;
+   protected int resultado;
     
    public Dia(){
        Cp = 0;
