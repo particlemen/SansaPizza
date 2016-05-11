@@ -13,9 +13,9 @@ public class Local {
     private int DineroLocal;
     private int Estrellas;
     protected ArrayList<Empleado> Empleados = new ArrayList();
-    protected ArrayList<Mesa> Muebles = new ArrayList();
+    protected ArrayList<Mesa> Mesas = new ArrayList(9);
     protected ArrayList<Dia> Dias = new ArrayList();
-    protected ArrayList<Decoracion> Decoracion = new ArrayList(9);
+    protected ArrayList<Decoracion> Decoracion = new ArrayList();
     
     public Local(){
         DineroLocal = 1200000;
