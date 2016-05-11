@@ -91,6 +91,5 @@ public class Dia {
    public int getResultado(){
        return this.resultado;
    }
-   
-   
+      
 }

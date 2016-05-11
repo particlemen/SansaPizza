@@ -60,7 +60,41 @@ public class Local {
     public void anadirMesero(){
         this.Empleados.add(new Mesero());
     }
-    public  anadirDecoracion(){
+    public void anadirDecoracion(int tipo){
+        switch (tipo) {
+            case 1: 
+                this.Decoraciones.add(new DecoracionRegular());
+                this.DineroLocal -= 5000;
+                break;
+            case 2:
+                this.Decoraciones.add(new DecoracionBonita());
+                this.DineroLocal -= 10000;
+                break;
+            case 3:
+                this.Decoraciones.add(new DecoracionEspectacular());
+                this.DineroLocal -= 20000;
+                break;
+            default:
+                break;
+        }
+    }
+    public void anadirMesas(int tipo){
+        switch (tipo) {
+            case 1: 
+                this.Mesas.add(new MesaChica());
+                this.DineroLocal -= 400;
+                break;
+            case 2:
+                this.Mesas.add(new MesaMediana());
+                this.DineroLocal -= 2000;
+                break;
+            case 3:
+                this.Mesas.add(new MesaGrande());
+                this.DineroLocal -= 3000;
+                break;
+            default:
+                break;
+        }
         
     }
 }
