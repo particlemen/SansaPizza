@@ -23,6 +23,27 @@ public class Local {
         DineroLocal = 1200000;
         Estrellas = 0;
     }
+    
+    
+    public int getDineroLocal(){
+        return this.DineroLocal;
+    }
+    public int getEstrellas(){
+        return this.Estrellas;
+    }
+    public double getPopularidad(){
+        return this.Popularidad;
+    }
+    public void setDineroLocal(int Dinero){
+        this.DineroLocal = Dinero;
+    }
+    public void setEstrellas(int Stars){
+        this.Estrellas = Stars;
+    }
+    public void setPopularidad(double vougue){
+        this.Popularidad = vougue;
+    }
+    
     public void Ganancias(int ganancias){
         this.DineroLocal += ganancias;
     }
