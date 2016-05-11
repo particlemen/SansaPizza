@@ -13,4 +13,7 @@ public abstract class Mesa {
     int precio;
     int cap;
     
+    public void Contabilizar(Dia dia){
+        dia.Cs += this.cap;                
+    }
 }
