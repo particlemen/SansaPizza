@@ -21,10 +21,19 @@ public class Local {
         DineroLocal = 1200000;
         Estrellas = 0;
     }
-    public void Ganancias(int ganancias){
+    public void setGanancias(int ganancias){
         this.DineroLocal += ganancias;
     }
-    public void Perdidas(int perdidas){
+    public void setPerdidas(int perdidas){
         this.DineroLocal -= perdidas;
     }
+    public void Popularidad(){
+        double popularidad = 0;
+        for (int puntero = 0; puntero < this.Decoraciones.size(); puntero++){
+            popularidad += this.Decoraciones.get(puntero).popularidad;
+        }
+        if ((0 <= popularidad) && (popularidad < 2)) this.Estrellas = 1;
+        else if ((2 <= popularidad) && (popularidad < 4)) this.Estrellas = 2;
+        
+      }   
 }
