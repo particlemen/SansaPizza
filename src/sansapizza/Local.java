@@ -57,44 +57,85 @@ public class Local {
         }
         this.Popularidad = popularidad;
     }
-    public void anadirMesero(){
-        this.Empleados.add(new Mesero());
+    public void anadirMesero(int tipo){
+        switch (tipo){
+            case 1:
+                this.Empleados.add(new Mesero());
+                break;
+            case 2:
+                this.Empleados.add(new Cocinero());
+                break;
+            default:
+                break;
+        }
     }
     public void anadirDecoracion(int tipo){
         switch (tipo) {
             case 1: 
                 this.Decoraciones.add(new DecoracionRegular());
-                this.DineroLocal -= 5000;
+                this.Perdida(10000);
                 break;
             case 2:
                 this.Decoraciones.add(new DecoracionBonita());
-                this.DineroLocal -= 10000;
+                this.Perdida(25000);
                 break;
             case 3:
                 this.Decoraciones.add(new DecoracionEspectacular());
-                this.DineroLocal -= 20000;
+                this.Perdida(45000);
                 break;
             default:
                 break;
         }
     }
-    public void anadirMesas(int tipo){
+    public void anadirMesa(int tipo){
         switch (tipo) {
             case 1: 
                 this.Mesas.add(new MesaChica());
-                this.DineroLocal -= 400;
+                this.Perdida(65000);
                 break;
             case 2:
                 this.Mesas.add(new MesaMediana());
-                this.DineroLocal -= 2000;
+                this.Perdida(100000);
                 break;
             case 3:
                 this.Mesas.add(new MesaGrande());
-                this.DineroLocal -= 3000;
+                this.Perdida(150000);
                 break;
             default:
                 break;
         }
-        
+    }
+    public void despedirEmpleado(int tipo){
+        int puntero = 0;
+        switch (tipo){
+            case 1:
+                while (puntero < this.Empleados.size()){
+                    if (this.Empleados.get(puntero).getSueldo() == 8000) this.Empleados.remove(puntero);
+                }
+                break;
+            case 2:
+                while (puntero < this.Empleados.size()){
+                    if (this.Empleados.get(puntero).getSueldo() == 10000) this.Empleados.remove(puntero);
+                }
+                break;
+        }   
+    }
+    
+    public void venderMesas(int tipo){
+        int puntero = 0;
+        while (puntero < this.Empleados.size()){
+            if ((tipo == 1) && (this.Mesas.get(puntero).getVenta() == 50000)){
+                this.Ganancia(50000);
+                this.Mesas.remove(puntero);
+            }
+            else if ((tipo == 2) && (this.Mesas.get(puntero).getVenta() == 75000)){
+                this.Ganancia(75000);
+                this.Mesas.remove(puntero);
+            }
+            else if ((tipo == 3) && (this.Mesas.get(puntero).getVenta() == 100000)){
+                this.Ganancia(100000);
+                this.Mesas.remove(puntero);
+            }
+        }
     }
 }

@@ -11,9 +11,9 @@ package sansapizza;
  */
 public class MesaChica extends Mesa {
     public MesaChica(){
-        precio = 1000;
+        precio = 65000;
         cap = 5;
-        venta = 400;
+        venta = 50000;
     } 
     
 }

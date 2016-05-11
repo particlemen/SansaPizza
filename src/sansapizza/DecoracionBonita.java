@@ -11,8 +11,8 @@ package sansapizza;
  */
 public class DecoracionBonita extends Decoracion {
    public DecoracionBonita() {
-        precio = 10000;
+        precio = 25000;
         popularidad = 0.5;
-        venta = 6000;
+        venta = 16000;
     }
 }

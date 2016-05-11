@@ -22,7 +22,9 @@ public class Cocinero implements Empleado {
     }
     public void realizarEmpleo(Dia dia){
         dia.setCr(dia.getCr() + sueldo);
-        
+    }
+    public int getSueldo(){
+        return this.sueldo;
     }
     
 }
