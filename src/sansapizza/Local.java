@@ -11,6 +11,9 @@ import java.util.ArrayList;
  */
 public class Local {
     private int DineroLocal;
-    
-    
+    private int Estrellas;
+    ArrayList Empleados = new ArrayList();
+    ArrayList Muebles = new ArrayList();
+    ArrayList Dias = new ArrayList();
+    ArrayList Decoracion = new ArrayList();
 }
