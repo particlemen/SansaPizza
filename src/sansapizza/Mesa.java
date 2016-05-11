@@ -15,8 +15,7 @@ public abstract class Mesa {
     protected int venta;
     
     public void Contabilizar(Dia dia){
-        dia.Cs += this.cap;
-                
+        dia.setCs(dia.getCs() + this.cap);                
     }
     
     public int getPrecio(){
