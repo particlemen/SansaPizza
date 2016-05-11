@@ -16,7 +16,7 @@ public class Comida {
     private int nivel = 1;
     
     public void aumentarNivel(Local local){
-        local.Perdidas(this.costoUpgrade);
+        local.Perdida(this.costoUpgrade);
         this.nivel += 1;
         this.costo += 0.5 * this.costo;
         this.precio = 2 * this.costo;

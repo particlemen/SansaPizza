@@ -44,10 +44,10 @@ public class Local {
         this.Popularidad = vougue;
     }
     
-    public void Ganancias(int ganancias){
+    public void Ganancia(int ganancias){
         this.DineroLocal += ganancias;
     }
-    public void Perdidas(int perdidas){
+    public void Perdida(int perdidas){
         this.DineroLocal -= perdidas;
     }
     public void PopularidadDecoracion(){
