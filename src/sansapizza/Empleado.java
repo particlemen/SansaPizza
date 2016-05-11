@@ -10,6 +10,6 @@ package sansapizza;
  * @author maligno
  */
 interface Empleado {
-    public void pagarSueldo();
+    public void pagarSueldo(Dia dia);
     public void realizarEmpleo(Dia dia);
 }
