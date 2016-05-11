@@ -10,13 +10,18 @@ package sansapizza;
  * @author felip
  */
 public class Cocinero implements Empleado {
-    private int sueldo = 10000;
-    private int maxAtendidos = 8;
+    private final int sueldo;
+    private final int maxAtendidos;
     
+    public Cocinero(){
+        sueldo = 10000;
+        maxAtendidos = 8;
+    }
     public void pagarSueldo(Dia dia){
-        
+        dia.sueldo = dia.sueldo + sueldo;
     }
     public void realizarEmpleo(Dia dia){
+        dia.Cr+= 80;
         
     }
     
