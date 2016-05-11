@@ -10,12 +10,24 @@ package sansapizza;
  * @author felip
  */
 public abstract class Mesa {
-    int precio;
-    int cap;
-    int venta;
+    protected int precio;
+    protected int cap;
+    protected int venta;
     
     public void Contabilizar(Dia dia){
         dia.Cs += this.cap;
                 
+    }
+    
+    public int getPrecio(){
+        return this.precio;
+    }
+    
+    public int getCapacidad(){
+        return this.cap;
+    }
+    
+    public int getVenta(){
+        return this.venta;
     }
 }
