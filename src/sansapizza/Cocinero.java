@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sansapizza;
 
-/**
- *
- * @author felip
- */
 public class Cocinero implements Empleado {
     private final int sueldo;
     private final int maxAtendidos;
@@ -17,12 +8,32 @@ public class Cocinero implements Empleado {
         sueldo = 10000;
         maxAtendidos = 8;
     }
+    
+    /******** Metodo: pagarSueldo ********************
+    Descripcion: suma el sueldo del cocinero al sueldo total en dia
+    Parametros:
+    dia [dia actual]
+    Retorno: no hay retorno
+    ************************************************/
     public void pagarSueldo(Dia dia){
-        dia.setSueldo(dia.getSueldo() + sueldo);
+        dia.setSueldo(dia.getSueldo() + this.sueldo);
     }
+    
+    /******** Metodo: realizarEmpleo ********************
+    Descripcion: suma los clientes que pueden ser atendidos a Cr en dia
+    Parametros:
+    dia [dia actual]
+    Retorno: no hay retorno
+    ************************************************/
     public void realizarEmpleo(Dia dia){
-        dia.setCr(dia.getCr() + sueldo);
+        dia.setCr(dia.getCr() + this.maxAtendidos);
     }
+    
+    /******** Metodo: getSueldo ********************
+    Descripcion: Retorna el sueldo del cocinero
+    Parametros:
+    Retorno: Sueldo del cocinero
+    ************************************************/
     public int getSueldo(){
         return this.sueldo;
     }

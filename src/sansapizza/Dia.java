@@ -31,7 +31,13 @@ public class Dia {
        costo = 0;
        resultado = 0;
    }
-     
+    
+    /******** Metodo: Grupo de getters y setters ********************
+    Descripcion: Los setters cambian el valor de varibles de la clase, mientras los getters lo obtienen
+    Parametros:
+    int n (solo setters)
+    Retorno: Para los getters, retorna los valores, y para los setters no hay retorno
+    ************************************************/
    public void setCs(int n){
        this.Cs = n;
    }
@@ -87,42 +93,91 @@ public class Dia {
    public int getResultado(){
        return this.resultado;
    }
+   /****************Fin Setters y Getters***********************
    
+   
+    /******** Metodo: calcularClientesComiendo ********************
+    Descripcion: Calcula Cr y Ca, para luego cambiar las intancias en esta clase al iterar sobre la lista de empleados
+    Parametros:
+    * Local local (local actual)
+    Retorno: no hay retorno
+    ************************************************/
    public void calcularClientesComiendo(Local local){
        ArrayList<Empleado> Empleados = local.getEmpleados();
        for (Empleado Empleado : Empleados){
            Empleado.realizarEmpleo(this);
        }
    }
+   
+    /******** Metodo: calcularClientesSentados ********************
+    Descripcion: Calcula la cantidad de clientes que se pueden sentar en las mesas (Cs)
+    Parametros:
+    * Local local (local actual)
+    Retorno: no hay retorno
+    ************************************************/
    public void calcularClientesSentados(Local local){
        ArrayList<Mesa> Mesas = local.getMesas();
        for (Mesa Mesa : Mesas) {
            Mesa.Contabilizar(this);
        }
    }
+   
+    /******** Metodo: calcularClientesPotenciales ********************
+    Descripcion: Calcula los clientes que se interesan en comer en el local, segun su popularidad
+    Parametros:
+    * Local local (local actual)
+    Retorno: no hay retorno
+    ************************************************/
    public void calcularClientesPotenciales(Local local){
        this.Cp = (int) (20 * local.getPopularidad());
    }
    
+    /******** Metodo: calcularClientesFelices ********************
+    Descripcion: Obtiene los clientes que pudieron ser atendidos, siendo estos el minimo entre
+    * los que se puedieron sentar (Cs) o los que puedieron ser atendidos por los meseros(Ca) o los cocineros (Cr)
+    * o los clientes que se interesaron en el local (Cp)
+    Parametros:
+    Retorno: no hay retorno
+    ************************************************/
    public void calcularClientesFelices(){
        this.Cf = Math.min(Math.min(Cp, Cr), Math.min(Ca, Cs));
    }
    
+    /******** Metodo: calcularIngreso ********************
+    Descripcion: Retorna lo ganado segun los clientes que pagaron
+    Parametros: Local local(local actual)
+    Retorno: no hay retorno
+    ************************************************/
    public void calcularIngreso(Local local){
        this.ingreso = this.Cf * local.getComida().getPrecio();
    }
    
+    /******** Metodo: calcularSueldoDiario ********************
+    Descripcion: Calcula el costo obtenido del sueldo de los empleados del local
+    Parametros: Local local (local actual)
+    Retorno: no hay retorno
+    ************************************************/
    public void calcularSueldoDiario(Local local){
        for (Empleado esclavo : local.getEmpleados()){
            esclavo.pagarSueldo(this);
        }
    }
    
+    /******** Metodo: calcularCosto ********************
+    Descripcion: Calcula el costo total del local
+    Parametros: Local local (local actual)
+    Retorno: no hay retorno
+    ************************************************/
    public void calcularCosto(Local local){
        int min = Math.min(Math.min(Ca, Cs), Cp);
        this.costo = local.getComida().getCosto() * min + this.sueldo;
    }
    
+    /******** Metodo: totalDiario ********************
+    Descripcion: Calcula las perdidas o ganancias diarias del local
+    Parametros: 
+    Retorno: no hay retorno
+    ************************************************/
    public void totalDiario(){
        this.resultado = this.ingreso - this.costo;
    }
