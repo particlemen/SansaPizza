@@ -35,6 +35,20 @@ public class Local {
     public double getPopularidad(){
         return this.Popularidad;
     }
+    
+    public ArrayList<Empleado> getEmpleados(){
+        return this.Empleados;
+    }
+    
+    public ArrayList<Mesa> getMesas(){
+        return this.Mesas;
+    }
+    
+    public Comida getComida(){
+        return this.Comida;
+    }
+    
+    
     public void setDineroLocal(int Dinero){
         this.DineroLocal = Dinero;
     }
@@ -53,8 +67,8 @@ public class Local {
     }
     public void PopularidadDecoracion(){
         double popularidad = Math.pow(2 , this.Estrellas);
-        for (int puntero = 0; puntero < this.Decoraciones.size(); puntero++){
-            popularidad += this.Decoraciones.get(puntero).getPopularidad();
+        for (Decoracion Decoracion : Decoraciones){
+            popularidad += Decoracion.getPopularidad();
         }
         this.Popularidad = popularidad;
     }

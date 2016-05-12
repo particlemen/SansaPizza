@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package sansapizza;
-
+import java.util.ArrayList;
 /**
  *
  * @author maligno
@@ -32,10 +32,6 @@ public class Dia {
        resultado = 0;
    }
      
-   public void setCp(int n){
-       this.Cp = n;
-   }
-   
    public void setCs(int n){
        this.Cs = n;
    }
@@ -91,5 +87,43 @@ public class Dia {
    public int getResultado(){
        return this.resultado;
    }
-      
+   
+   public void calcularClientesComiendo(Local local){
+       ArrayList<Empleado> Empleados = local.getEmpleados();
+       for (Empleado Empleado : Empleados){
+           Empleado.realizarEmpleo(this);
+       }
+   }
+   public void calcularClientesSentados(Local local){
+       ArrayList<Mesa> Mesas = local.getMesas();
+       for (Mesa Mesa : Mesas) {
+           Mesa.Contabilizar(this);
+       }
+   }
+   public void calcularClientesPotenciales(Local local){
+       this.Cp = (int) (20 * local.getPopularidad());
+   }
+   
+   public void calcularClientesFelices(){
+       this.Cf = Math.min(Math.min(Cp, Cr), Math.min(Ca, Cs));
+   }
+   
+   public void calcularIngreso(Local local){
+       this.ingreso = this.Cf * local.getComida().getPrecio();
+   }
+   
+   public void calcularSueldoDiario(Local local){
+       for (Empleado esclavo : local.getEmpleados()){
+           esclavo.pagarSueldo(this);
+       }
+   }
+   
+   public void calcularCosto(Local local){
+       int min = Math.min(Math.min(Ca, Cs), Cp);
+       this.costo = min * local.getComida().getCosto() + this.sueldo;
+   }
+   
+   public int totalDiario(){
+       return this.ingreso - this.costo;
+   }
 }
