@@ -14,15 +14,21 @@ public class Local {
     private double Popularidad;
     private int DineroLocal;
     private int Estrellas;
-    private Comida Comida;
-    private ArrayList<Empleado> Empleados = new ArrayList();
-    private ArrayList<Mesa> Mesas = new ArrayList(9);
-    private ArrayList<Dia> Dias = new ArrayList();
-    private ArrayList<Decoracion> Decoraciones = new ArrayList();
+    private int streak;
+    private Comida comida;
+    private ArrayList<Empleado> Empleados = new ArrayList<Empleado>();
+    private ArrayList<Mesa> Mesas = new ArrayList<Mesa>(9);
+    private ArrayList<Dia> Dias = new ArrayList<Dia>();
+    private ArrayList<Decoracion> Decoraciones = new ArrayList<Decoracion>();
     
     public Local(){
         DineroLocal = 1200000;
         Estrellas = 0;
+        Empleados.add(new Mesero());
+        Empleados.add(new Cocinero());
+        Mesas.add(new MesaChica());
+        Decoraciones.add(new DecoracionRegular());
+        comida = new Comida();
     }
     
     
@@ -45,7 +51,7 @@ public class Local {
     }
     
     public Comida getComida(){
-        return this.Comida;
+        return this.comida;
     }
     
     
@@ -192,6 +198,26 @@ public class Local {
     }
     
     public void subirComida(){
-        Comida.aumentarNivel(this);
+        this.comida.aumentarNivel(this);
+    }
+    
+    public void iniciarDia(){
+        Dia DiaActual = new Dia();
+        DiaActual.calcularClientesComiendo(this);
+        DiaActual.calcularClientesFelices();
+        DiaActual.calcularClientesPotenciales(this);
+        DiaActual.calcularClientesSentados(this);
+        DiaActual.calcularCosto(this);
+        DiaActual.calcularIngreso(this);
+        DiaActual.calcularSueldoDiario(this);
+        DiaActual.totalDiario();
+        if (DiaActual.getCf() >= DiaActual.getCp() * 0.8){
+            streak++;
+        }
+        if (streak == 8){
+            streak = 0;
+            this.Estrellas++;
+        }
+        this.Dias.add(DiaActual);
     }
 }

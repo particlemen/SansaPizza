@@ -15,7 +15,10 @@ public class SansaPizza {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+     
+       Local local = new Local();
+       local.iniciarDia();
+       //Interfaz interfaz = new Interfaz();
              
     }
     

@@ -120,10 +120,10 @@ public class Dia {
    
    public void calcularCosto(Local local){
        int min = Math.min(Math.min(Ca, Cs), Cp);
-       this.costo = min * local.getComida().getCosto() + this.sueldo;
+       this.costo = local.getComida().getCosto() * min + this.sueldo;
    }
    
-   public int totalDiario(){
-       return this.ingreso - this.costo;
+   public void totalDiario(){
+       this.resultado = this.ingreso - this.costo;
    }
 }
