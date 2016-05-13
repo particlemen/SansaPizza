@@ -23,7 +23,7 @@ public class Local {
     
     public Local(){
         DineroLocal = 1200000;
-        Estrellas = 1;
+        Estrellas = 0;
         Empleados.add(new Mesero());
         Empleados.add(new Cocinero());
         Mesas.add(new MesaChica());
@@ -210,14 +210,13 @@ public class Local {
         Dia DiaActual = new Dia();
         this.PopularidadDecoracion();
         DiaActual.calcularClientesComiendo(this);
-        DiaActual.calcularClientesFelices();
         DiaActual.calcularClientesPotenciales(this);
         DiaActual.calcularClientesSentados(this);
+        DiaActual.calcularClientesFelices();
         DiaActual.calcularCosto(this);
         DiaActual.calcularIngreso(this);
         DiaActual.calcularSueldoDiario(this);
         DiaActual.totalDiario();
-        System.out.println(this.getPopularidad());
         this.DineroLocal += DiaActual.getResultado();
         if (DiaActual.getCf() >= DiaActual.getCp() * 0.8){
             streak++;

@@ -23,7 +23,7 @@ public class Mesero implements Empleado {
         
     }
     public void realizarEmpleo(Dia dia){
-        dia.setCr(dia.getCr() + sueldo);
+        dia.setCr(dia.getCr() + maxAtendidos);
     }
     
     public int getSueldo(){

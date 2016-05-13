@@ -227,7 +227,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="ClientesFelices">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jLabel5"/>
+                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="this.informacion4" type="code"/>
+                </Property>
               </Properties>
             </Component>
           </SubComponents>

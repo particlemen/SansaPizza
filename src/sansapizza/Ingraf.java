@@ -120,7 +120,7 @@ public class Ingraf extends javax.swing.JFrame {
 
         Popularidad.setText(this.informacion2);
 
-        ClientesFelices.setText("jLabel5");
+        ClientesFelices.setText(this.informacion4);
 
         jLayeredPane1.setLayer(Estrellas, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(Dinero, javax.swing.JLayeredPane.DEFAULT_LAYER);

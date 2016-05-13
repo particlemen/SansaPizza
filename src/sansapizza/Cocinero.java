@@ -26,7 +26,7 @@ public class Cocinero implements Empleado {
     Retorno: no hay retorno
     ************************************************/
     public void realizarEmpleo(Dia dia){
-        dia.setCr(dia.getCr() + this.maxAtendidos);
+        dia.setCa(dia.getCa() + this.maxAtendidos);
     }
     
     /******** Metodo: getSueldo ********************
