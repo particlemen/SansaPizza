@@ -7,6 +7,7 @@ package sansapizza;
 
 /**
  *
+ * Nombre_pantalla.setText(asdasdad);
  * @author maligno
  */
 public class SansaPizza {
@@ -17,8 +18,11 @@ public class SansaPizza {
     public static void main(String[] args) {
      
        Local local = new Local();
+       //Interfaz Killme = new Interfaz();
        local.iniciarDia();
        //Interfaz interfaz = new Interfaz();
+       Ingraf zapato = new Ingraf();
+       zapato.setVisible(true);
              
     }
     

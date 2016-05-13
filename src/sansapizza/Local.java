@@ -23,7 +23,7 @@ public class Local {
     
     public Local(){
         DineroLocal = 1200000;
-        Estrellas = 0;
+        Estrellas = 1;
         Empleados.add(new Mesero());
         Empleados.add(new Cocinero());
         Mesas.add(new MesaChica());
@@ -54,6 +54,10 @@ public class Local {
         return this.comida;
     }
     
+    public Dia getLastDay(){
+        return this.Dias.get(this.Dias.size()-1);
+    }
+    
     
     public void setDineroLocal(int Dinero){
         this.DineroLocal = Dinero;
@@ -78,7 +82,7 @@ public class Local {
         }
         this.Popularidad = popularidad;
     }
-    public void anadirMesero(int tipo){
+    public void anadirEmpleado(int tipo){
         switch (tipo){
             case 1:
                 this.Empleados.add(new Mesero());
@@ -203,6 +207,7 @@ public class Local {
     
     public void iniciarDia(){
         Dia DiaActual = new Dia();
+        this.PopularidadDecoracion();
         DiaActual.calcularClientesComiendo(this);
         DiaActual.calcularClientesFelices();
         DiaActual.calcularClientesPotenciales(this);
@@ -211,6 +216,7 @@ public class Local {
         DiaActual.calcularIngreso(this);
         DiaActual.calcularSueldoDiario(this);
         DiaActual.totalDiario();
+        this.DineroLocal += DiaActual.getResultado();
         if (DiaActual.getCf() >= DiaActual.getCp() * 0.8){
             streak++;
         }
