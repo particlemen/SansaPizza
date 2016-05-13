@@ -16,10 +16,7 @@ public class SansaPizza {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-     
-       Local local = new Local();
        //Interfaz Killme = new Interfaz();
-       local.iniciarDia();
        //Interfaz interfaz = new Interfaz();
        Ingraf zapato = new Ingraf();
        zapato.setVisible(true);

@@ -27,6 +27,7 @@ public class Local {
         Empleados.add(new Mesero());
         Empleados.add(new Cocinero());
         Mesas.add(new MesaChica());
+        Dias.add(new Dia());
         Decoraciones.add(new DecoracionRegular());
         comida = new Comida();
     }
@@ -216,6 +217,7 @@ public class Local {
         DiaActual.calcularIngreso(this);
         DiaActual.calcularSueldoDiario(this);
         DiaActual.totalDiario();
+        System.out.println(this.getPopularidad());
         this.DineroLocal += DiaActual.getResultado();
         if (DiaActual.getCf() >= DiaActual.getCp() * 0.8){
             streak++;
