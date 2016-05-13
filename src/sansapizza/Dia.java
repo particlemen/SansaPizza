@@ -141,7 +141,10 @@ public class Dia {
     ************************************************/
    public void calcularClientesFelices(){
        this.Cf = Math.min(Math.min(Cp, Cr), Math.min(Ca, Cs));
-       System.out.println(this.Cf);
+       System.out.println(this.Cp);
+       System.out.println(this.Cr);
+       System.out.println(this.Ca);
+       System.out.println(this.Cs);
    }
    
     /******** Metodo: calcularIngreso ********************

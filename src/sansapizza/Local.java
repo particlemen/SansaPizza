@@ -84,6 +84,7 @@ public class Local {
         this.Popularidad = popularidad;
     }
     public void anadirEmpleado(int tipo){
+        tipo++;
         switch (tipo){
             case 1:
                 this.Empleados.add(new Mesero());
@@ -96,6 +97,7 @@ public class Local {
         }
     }
     public void anadirDecoracion(int tipo){
+        tipo++;
         switch (tipo) {
             case 1: 
                 this.Decoraciones.add(new DecoracionRegular());
@@ -114,6 +116,7 @@ public class Local {
         }
     }
     public void anadirMesa(int tipo){
+        tipo++;
         switch (tipo) {
             case 1: 
                 this.Mesas.add(new MesaChica());
@@ -132,6 +135,7 @@ public class Local {
         }
     }
     public void despedirEmpleado(int tipo){
+        tipo++;
         int puntero = 0;
         switch (tipo){
             case 1:
@@ -155,6 +159,7 @@ public class Local {
     }
     
     public void venderMesas(int tipo){
+        tipo++;
         int puntero = 0;
         while (puntero < this.Mesas.size()){
             if ((tipo == 1) && (this.Mesas.get(puntero).getVenta() == 50000)){
@@ -177,6 +182,7 @@ public class Local {
     }
     
     public void venderDecoracion(int tipo){
+        tipo++;
         int puntero = 0;
         while (puntero < this.Decoraciones.size()){
             if ((tipo == 1) && (this.Decoraciones.get(puntero).getVenta() == 50000)){
@@ -213,9 +219,9 @@ public class Local {
         DiaActual.calcularClientesPotenciales(this);
         DiaActual.calcularClientesSentados(this);
         DiaActual.calcularClientesFelices();
-        DiaActual.calcularCosto(this);
-        DiaActual.calcularIngreso(this);
         DiaActual.calcularSueldoDiario(this);
+        DiaActual.calcularCosto(this);
+        DiaActual.calcularIngreso(this);        
         DiaActual.totalDiario();
         this.DineroLocal += DiaActual.getResultado();
         if (DiaActual.getCf() >= DiaActual.getCp() * 0.8){
